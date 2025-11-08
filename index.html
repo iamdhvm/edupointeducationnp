@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edupoint Education Consultancy - Study in Germany & Japan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --germany-black: #000000;
+            --germany-red: #DD0000;
+            --germany-yellow: #FFCE00;
+            --japan-red: #BC002D;
+            --japan-white: #FFFFFF;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+            --text: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--germany-black) 0%, var(--germany-black) 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            margin-right: 15px;
+            border-radius: 5px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: white;
+            margin-top: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--germany-yellow);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--germany-yellow);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(247, 121, 3, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--germany-red), var(--japan-red));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--japan-red);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--germany-black);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(to right, var(--germany-red), var(--japan-red));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--germany-black);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--germany-red);
+        }
+
+        .service-card:nth-child(even) {
+            border-top-color: var(--japan-red);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--germany-black);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--germany-black);
+        }
+
+        /* Countries Section */
+        .countries {
+            background: linear-gradient(to right, #f5f5f5, #f9f9f9);
+        }
+
+        .country-cards {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .country-card {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .country-flag {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .germany-flag {
+            background: linear-gradient(to bottom, var(--germany-black) 0%, var(--germany-black) 33%, var(--germany-red) 33%, var(--germany-red) 66%, var(--germany-yellow) 66%, var(--germany-yellow) 100%);
+            color: white;
+        }
+
+        .japan-flag {
+            background-color: var(--japan-white);
+            color: var(--japan-red);
+            position: relative;
+        }
+
+        .japan-flag::after {
+            content: "●";
+            position: absolute;
+            font-size: 5rem;
+            color: var(--japan-red);
+        }
+
+        .country-info {
+            padding: 25px;
+        }
+
+        .country-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--germany-black);
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .benefits-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--germany-red);
+            font-weight: bold;
+        }
+
+        /* Language Classes Section */
+        .language-classes {
+            background-color: white;
+        }
+
+        .language-cards {
+            display: flex;
+            gap: 30px;
+        }
+
+        .language-card {
+            flex: 1;
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .language-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .language-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .german-icon {
+            color: var(--germany-black);
+        }
+
+        .japanese-icon {
+            color: var(--japan-red);
+        }
+
+        .language-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--germany-black);
+        }
+
+        .language-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .language-features li {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(to right, #f5f5f5, #f9f9f9);
+        }
+
+        .testimonial-cards {
+            display: flex;
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: " ";
+            font-size: 3rem;
+            color: var(--germany-red);
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: auto;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--germany-black);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--germany-red);
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--germany-black), var(--japan-red));
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .footer-column:last-child {
+            margin-right: 0;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--germany-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--germany-yellow);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--germany-yellow);
+            color: var(--germany-black);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+
+            .about-content,
+            .contact-container,
+            .country-cards,
+            .language-cards,
+            .testimonial-cards {
+                flex-direction: column;
+            }
+
+            .about-image,
+            .country-card,
+            .language-card,
+            .testimonial-card {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-container {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <!-- Replace "logo.png" with your actual logo file -->
+                    <img src="logo.png" alt="Edupoint Education Consultancy Logo">
+                </div>
+                <div>
+                    <div class="company-name">Edupoint Education Consultancy</div>
+                    <div class="tagline">Pvt. Ltd.</div>
+                </div>
+            </div>
+            <div class="mobile-menu">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#countries">Destinations</a></li>
+                    <li><a href="#language">Language Classes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Study & Work in Germany or Japan</h1>
+            <p>Edupoint Education Consultancy helps Nepali students achieve their dreams of studying abroad with expert
+                guidance for Germany and Japan.</p>
+            <div>
+                <a href="#contact" class="btn">Free Consultation</a>
+                <a href="#language" class="btn btn-outline">Language Classes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Edupoint</h2>
+                <p>Edupoint Education Consultancy Pvt. Ltd. Your trusted partner in global learning!</p>
+                <p>"Guiding you to the Global Classrooms"</p>
+                 <p>Learn, Plan & Achieve.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Trusted Partner for International Education</h3>
+                    <p>Welcome to the official site of Edupoint Education Consultancy Pvt. Ltd., your trusted language and test preparation partner in Bagbazar, Kathmandu, Nepal.
+                    We are dedicated to helping you achieve your academic and professional goals 
+                    by providing expert instruction in a supportive learning environment.</p>
+                    <p>Whether you're a beginner or looking to perfect your skills, our specialized courses 
+                    are designed for your success. We offer comprehensive classes for the German 
+                    Language (from A1 to B2 levels), expert preparation for major English tests 
+                    like IELTS, TOEFL etc., and courses to help you master the Japanese Language. 
+                    Let us guide you on your journey to linguistic success.</p>
+                    <a href="#contact" class="btn">Visit Our Office in Kathmandu</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Edupoint Consultancy Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We provide comprehensive education consultancy services tailored for Germany and Japan destinations.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>University Admissions</h3>
+                    <p>Complete guidance for selecting and applying to universities in Germany and Japan based on your
+                        academic profile and career goals.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-passport"></i></div>
+                    <h3>Visa Assistance</h3>
+                    <p>End-to-end visa support including documentation, interview preparation, and follow-up for German
+                        and Japanese student visas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-language"></i></div>
+                    <h3>Language Training</h3>
+                    <p>Comprehensive German and Japanese language courses with certified instructors, focusing on test
+                        preparation and practical communication.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-euro-sign"></i></div>
+                    <h3>Scholarship Guidance</h3>
+                    <p>Assistance in identifying and applying for scholarships, financial aid, and part-time work
+                        opportunities in Germany and Japan.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Accommodation Support</h3>
+                    <p>Help in finding safe and affordable accommodation in Germany and Japan, including student
+                        dormitories and shared apartments.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3>Pre-Departure Orientation</h3>
+                    <p>Comprehensive briefings on cultural adaptation, banking, health insurance, and essential
+                        preparations for life in Germany or Japan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section id="countries" class="countries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Study Destinations</h2>
+                <p>Choose between two of the world's most advanced education systems and thriving economies.</p>
+            </div>
+            <div class="country-cards">
+                <div class="country-card">
+                    <div class="country-flag germany-flag">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="country-info">
+                        <h3>Study in Germany</h3>
+                        <p>Germany offers world-class education with little to no tuition fees at public universities.
+                            It's an ideal destination for engineering, technology, and business studies.</p>
+                        <ul class="benefits-list">
+                            <li>Tuition-free education at public universities</li>
+                            <li>18 months post-study work permit</li>
+                            <li>Strong economy with job opportunities</li>
+                            <li>World-ranked universities</li>
+                            <li>Part-time work allowed</li>
+                        </ul>
+                        <a href="#contact" class="btn">Learn More About Germany</a>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag japan-flag">
+                        <i class="fas fa-torii-gate"></i>
+                    </div>
+                    <div class="country-info">
+                        <h3>Study in Japan</h3>
+                        <p>Japan combines cutting-edge technology with rich cultural heritage. It offers excellent
+                            education in engineering, robotics, and business with scholarship opportunities.</p>
+                        <ul class="benefits-list">
+                            <li>High-quality education system</li>
+                            <li>Various scholarship options available</li>
+                            <li>Safe and technologically advanced society</li>
+                            <li>Part-time work allowed</li>
+                            <li>Pathway to employment after graduation</li>
+                        </ul>
+                        <a href="#contact" class="btn">Learn More About Japan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Classes Section -->
+    <section id="language" class="language-classes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Language Classes</h2>
+                <p>We offer comprehensive German and Japanese language courses taught by certified native and Nepali
+                    instructors.</p>
+            </div>
+            <div class="language-cards">
+                <div class="language-card">
+                    <div class="language-icon german-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>German Language Courses</h3>
+                    <p>Prepare for ÖSD/TELC/Goethe exams with our structured German courses.</p>
+                    <ul class="language-features">
+                        <li>A1 to B2 levels available</li>
+                        <li>Focus on ÖSD, TELC and Goethe exam preparation</li>
+                        <li>Small batch sizes for personalized attention</li>
+                        <li>Native German speakers as guest faculty</li>
+                        <li>Flexible morning and evening batches</li>
+                    </ul>
+                    <a href="#contact" class="btn">Enroll Now</a>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon japanese-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Japanese Language Courses</h3>
+                    <p>Master Japanese for university admissions with our comprehensive curriculum.</p>
+                    <ul class="language-features">
+                        <li>N5 to N4 levels</li>
+                        <li>Emphasis on speaking and listening skills</li>
+                        <li>Cultural immersion activities</li>
+                        <li>Preparation for EJU (Examination for Japanese University)</li>
+                        <li>Weekend and intensive courses available</li>
+                    </ul>
+                    <a href="#contact" class="btn">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Hear from our consultancy students who have successfully moved to Germany through our guidance.</p>
+            </div>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Edupoint helped me get admission to Hochschule Stralsund for my Master of Engineering in
+                        Renewable Energy & E-mobility. Their German and IELTS classes were exceptional and prepared me well for
+                        both studies and daily life in Germany."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="dhiraj.jpg" alt="Dhiraj Mandal">
+                        </div>
+                        <div class="author-info">
+                            <h4>Dhiraj Mandal</h4>
+                            <p>ME Renewable Energy & E-mobility, Hochschule Stralsund</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Ich studiere derzeit Fahrzeugtechnik in Germany. 
+                        Dank der großartigen Unterstützung von Edupoint Education bei der 
+                        Vorbereitung auf die Aufnahmeprüfung, beim Erlernen der deutschen Sprache 
+                        und bei der Zusammenstellung meiner Unterlagen konnte ich meinen Weg nach 
+                        Deutschland erfolgreich verwirklichen. Sehr empfehlenswert!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="aayushma.jpg" alt="Aayushma Pant">
+                        </div>
+                        <div class="author-info">
+                            <h4>Aayushma Pant</h4>
+                            <p>B.Ing. Fahrzeugtechnik, Germany </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I am currently working as a registered nurse in Germany. 
+                        Edupoint Education supported me throughout the recognition process, especially in 
+                        preparing the required documents and finding the right institution for the adaptation course. 
+                        I am truly grateful for their great support!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="smriti.jpg" alt="Smriti KC">
+                        </div>
+                        <div class="author-info">
+                            <h4>Smriti KC</h4>
+                            <p>Registered Nurse, Germany </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Visit our office in Kathmandu or get in touch with our education experts.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Kathmandu Office</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Bagbazar, Kathmandu, Nepal<br>Opposite to TMT Complex</p>
+                                <a href="https://maps.app.goo.gl/mLQtS6TBiJxjcXJ67"
+                                   target="_blank" rel="noopener noreferrer">
+                                    Open location in Google Maps
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Phone Numbers</h4>
+                                <p>+9779705421343(Mobile & Whatsapp), 015328868(Telephone)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@edupoint.edu.np<br>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Sunday-Friday: 06:00 AM - 05:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I'm interested in</label>
+                            <select id="interest" class="form-control" required>
+                                <option value="">Select an option</option>
+                                <option value="germany">Study in Germany</option>
+                                <option value="japan">Study in Japan</option>
+                                <option value="german-language">German Language Classes</option>
+                                <option value="japanese-language">Japanese Language Classes</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="How can we help you?"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Edupoint Education Consultancy</h3>
+                    <p>Your trusted partner for studying in Germany and Japan. We provide comprehensive guidance from
+                        university selection to post-arrival support.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#countries">Study Destinations</a></li>
+                        <li><a href="#language">Language Classes</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Germany University Admissions</a></li>
+                        <li><a href="#">Japan University Admissions</a></li>
+                        <li><a href="#">German Language Classes</a></li>
+                        <li><a href="#">Japanese Language Classes</a></li>
+                        <li><a href="#">Visa Assistance</a></li>
+                        <li><a href="#">Scholarship Guidance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Edupoint Education Consultancy Pvt. Ltd. All Rights Reserved. | Bagbazar, Kathmandu,
+                    Nepal</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetSection = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu after clicking a link
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) { });
+        {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you within 24 hours.');
+        }
+
